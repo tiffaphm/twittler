@@ -1,0 +1,97 @@
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+html,
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+body {
+  padding-top: 70px;
+}
+footer {
+  padding: 30px 0;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 930px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+.jumbotron {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  margin-bottom: 30px;
+  color: inherit;
+  background-color: #eee;
+}
+
+/*  tweet containers*/
+  
+  .tweet-container {
+    height:100px;
+    background:#dee6ea;
+    margin:10px auto;
+  -webkit-box-shadow: 0 8px 6px -6px #777;
+     -moz-box-shadow: 0 8px 6px -6px #777;
+          box-shadow: 0 8px 6px -6px #777;
+  }
+
+  .timestamp {
+    padding-top: 12px;
+    text-align: right;
+    font-size: 10px;
+  }
+
+  .user-info, p.user-info {
+    padding-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #337ab7;
+  }
+
+  .toggle-user:hover {
+    color: #23527c;
+    text-decoration: none;
+  }
+
+/*get new tweet button*/
+
+.get-new-tweets {
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 12px;
+  background: #90bace;
+  padding: 6px 10px 6px 10px;
+  border: solid #dddddd 1px;
+  text-decoration: none;
+  width: 130px;
+  height: 30px;
+  text-align: center;
+  float: right;
+}
+
+.get-new-tweets:hover {
+  background: #4597bc;
+  text-decoration: none;
+}
+
+/*friends list */
+
+  .active.list-group-item {
+    background-color: #90bace;
+    border-color: #90bace;
+  }
+
+  .active.list-group-item:hover {
+    background-color: #4597bc;
+  }
+
+
