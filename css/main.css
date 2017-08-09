@@ -34,9 +34,11 @@ footer {
 /*  tweet containers*/
   
   .tweet-container {
-    height:100px;
+    height:65px;
     background:#dee6ea;
     margin:10px auto;
+    font-size: 15px;
+    border-radius: 2px;
   -webkit-box-shadow: 0 8px 6px -6px #777;
      -moz-box-shadow: 0 8px 6px -6px #777;
           box-shadow: 0 8px 6px -6px #777;
@@ -50,7 +52,7 @@ footer {
 
   .user-info, p.user-info {
     padding-top: 10px;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: bold;
     color: #337ab7;
   }
@@ -93,5 +95,3 @@ footer {
   .active.list-group-item:hover {
     background-color: #4597bc;
   }
-
-
