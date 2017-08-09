@@ -1,76 +1,89 @@
 
 $(document).ready(function(){
-  // var $body = $(".tweets");
-
-  // var index = streams.home.length - 1;
-  //   while(index >= 0) {
-  //     var tweet = streams.home[index];
-  //     var $tweet = $('.tweet-container');
-  //     // $tweet.text('@' + tweet.user + ': ' + tweet.message);
-  //     $(".toggle-user p").html(tweet.user);
-  //     $(".user-tweet p").text(tweet.message);
-  //     // $tweet.append($("body"));
-  //     // $tweet.appendTo($("body"));
-
-  //     index -= 1;
-  //   }
-
-  //           var index = streams.home.length - 1;
-  //       while(index >= 0){
-  //         var tweet = streams.home[index];
-  //         var $tweet = $('<div></div>');
-  //         $tweet.text('@' + tweet.user + ': ' + tweet.message);
-  //         $tweet.appendTo($body);
-  //         index -= 1;
-  //       }
-  //     });
-
 
 // click to get new tweets
   $(".get-new-tweets").click(function() {
-    var index = streams.home.length - 1;
     var username = streams.users;
-    var $user = $('.toggle-user p');
-    var $tweet = $('.user-tweet p');
-      $user.html('@' + randomElement(users));
-      $tweet.text(randomMessage());
-  });
+    var tweet = $(".user-tweet p");
+    $(".tweets").prepend(addTweets);
+    $(".toggle-user p").replaceWith(randomElement(users));
+    $(".user-tweet p").replaceWith(randomMessage());
+    $(".timestamp p").replaceWith(timestampForTweet);
 
-// // click to get new tweets
-//   $(".get-new-tweets").click(function() {
-//       var username = streams.users;
-//       var $tweet = $("<div></div>");
-//       $(".tweets").append(append_tweets);
-//       $(".toggle-user p").html(randomElement(users));
-//       $(".user-tweet p").text(randomMessage());
-//   })
-
-// user headline switch with "current" user
-  $(".list-group-item").click(function() {
-    var currentUser = $(".current-user").html().replace("username", $(".list-group-item"));
-    $(".current-user").html(currentUser);
-  });
-
-// click to toggle specific user feed
-  $(".toggle-user").click(function() {
-    console.log("on click, display only this user's tweets");
-    // $(".toggle-user p").text(function (){
-    //   return $(this).text().replace("username", tweet.user)
+    // $(".toggle-user").click(function() {
+    //   $(".tweet-container").hide();
+    //   var username = $(".toggle-user").text();
+    //   if ($('.toggle-user:contains("sharksforcheap")')) {
+    //     $('.tweet-container:contains("sharksforcheap")').show();
+    //   } else if ($('.toggle-user:contains("shawndrost")')) {
+    //     $('.tweet-container:contains("shawndrost")').show();
+    //   } else if ($('.toggle-user:contains("mracus")')) {
+    //     $('.tweet-container:contains("mracus")').show();
+    //   } else if ($('.toggle-user:contains("douglascalhoun")')) {
+    //     $('.tweet-container:contains("douglascalhoun")').show();
+    //   } else {
+    //     $(".tweet-container").show();
+    //   }
     // });
+
+// click username on tweet to get to profile
+// need to fix something "toggle-user" selector to specify only the username clicked
+  //   $(".toggle-user").click(function() {
+  //     $(".tweet-container").hide();
+  //     var username = $(".toggle-user:first").text();
+  //     console.log(username);
+  //     if ($('.toggle-user:contains("'+username+'")')) {
+  //       $('.tweet-container:contains("'+username+'")').show();
+  //     }
+  //   });
+  });
+
+// click to change to user profile & timeline
+
+  $(".sharks.list-group-item").click(function() {
+    $(".current-user").replaceWith("<h1 class='current-user'>sharksforcheap</h1>");
+    var username = "sharksforcheap";
+    $(".tweet-container").hide();
+    $('.tweet-container:contains("'+username+'")').show();
+  });
+
+  $(".shawn.list-group-item").click(function() {
+    $(".current-user").replaceWith("<h1 class='current-user'>shawndrost</h1>");
+    var username = "shawndrost";
+    $(".tweet-container").hide();
+    $('.tweet-container:contains("'+username+'")').show();
+  });
+
+  $(".mracus.list-group-item").click(function() {
+    $(".current-user").replaceWith("<h1 class='current-user'>mracus</h1>");
+    var username = "mracus";
+    $(".tweet-container").hide();
+    $('.tweet-container:contains("'+username+'")').show();
+  });
+
+  $(".douglas.list-group-item").click(function() {
+    $(".current-user").replaceWith("<h1 class='current-user'>douglascalhoun</h1>");
+    var username = "douglascalhoun";
+    $(".tweet-container").hide();
+    $('.tweet-container:contains("'+username+'")').show();
   });
 
 });
 
-var appendTweets = 
+//global variables
+
+var timestampForTweet = moment().format('MMMM Do YYYY, h:mm a');
+
+var addTweets = 
     "<div class='col-md-12 tweet-container'>\
       <div class='col-md-3 user-info'>\
-        <a href='#' class='toggle-user'><p>username</p></a>\
+        <a href='#' class='toggle-user'><p></p></a>\
       </div>\
       <div class='col-md-6'></div>\
       <div class='col-md-3 timestamp'>\
-        <p>date/time created</p>\
+        <p></p>\
       </div>\
       <div class='col-md-12 user-tweet'>\
-        <p>tweet tweet tweet</p>\
+        <p></p>\
       </div>\
     </div>";
